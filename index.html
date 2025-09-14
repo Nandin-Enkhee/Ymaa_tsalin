@@ -790,9 +790,9 @@
 
 <script>
   // Өгөгдөлүүд
-  let workers = JSON.parse(localStorage.getItem('workers') || '[]');
-  let salaryHistory = JSON.parse(localStorage.getItem('salaryHistory') || '[]');
-  let todayWorkers = JSON.parse(localStorage.getItem('todayWorkers') || '{}');
+  let workers = JSON.parse(localStorage.getItem('goat_workers') || '[]');
+  let salaryHistory = JSON.parse(localStorage.getItem('goat_salaryHistory') || '[]');
+  let todayWorkers = JSON.parse(localStorage.getItem('goat_todayWorkers') || '{}');
   let manualWorkers = [];
   let latestSalaryCalc = [];
   let salaryChanges = {}; // Цалингийн өөрчлөлтүүдийг хадгалах
@@ -1560,7 +1560,7 @@
 
   // Save salary history
   function saveSalaryHistory() {
-    localStorage.setItem('salaryHistory', JSON.stringify(salaryHistory));
+    localStorage.setItem('goat_salaryHistory', JSON.stringify(salaryHistory));
   }
 
   // Хэвлэх
@@ -1704,7 +1704,7 @@
     });
     
     todayWorkers[date] = selectedWorkers;
-    localStorage.setItem('todayWorkers', JSON.stringify(todayWorkers));
+    localStorage.setItem('goat_todayWorkers', JSON.stringify(todayWorkers));
     alert('Амжилттай хадгалагдлаа');
     renderTodayWorkersList();
     updateDashboard();
@@ -2166,7 +2166,7 @@
   
   // Save Workers
   function saveWorkers() {
-    localStorage.setItem('workers', JSON.stringify(workers));
+    localStorage.setItem('goat_workers', JSON.stringify(workers));
   }
 
   // Initialize date inputs
